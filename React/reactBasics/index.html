@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+</head>
+<body>
+    <div id = "root"></div>
+    <script type= "text/babel">
+
+        // let ele=document.createElement("h1");
+        // ele.innerText="hello";
+        // let root =document.getElementById("root");
+        // console.log(ele);
+        // root.appendChild(ele);
+
+        //react
+        // let h2 = React.createElement("h2", {
+        //         children: ["yolo"]
+        //     })
+        // let ele=React.createElement("div",{
+        //     children:["hello",h2]
+        // })
+        // console.log(ele);
+        // const root = ReactDOM.createRoot(document.getElementById('root'));
+        // root.render(ele);
+
+    // type use for babel/ JSX 
+    function Myh1(){
+        return(
+            // return Start
+            <h1>Hello</h1>
+        )  
+    }
+    
+    function Myh2(){
+        return(
+            // return Start
+            <h1>Hey</h1>
+        )
+    }
+
+    function Parent(){
+        return(
+            <React.Fragment>
+            <Myh1/>
+            <Myh2/>
+            <WelcomeMsg name="abhishek" lastname="Singh"/>
+           </React.Fragment>
+        )
+    }
+
+    function WelcomeMsg(props){
+        return(
+       <h1>Hello {props.name} and {props.lastname}</h1>
+        )
+    } 
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    // create react dom here
+    // root.render(<Myh1 />);
+    // root.render(<Myh1 />);
+    // root.render(<Myh1 />);
+    // root.render(<Myh2 />);
+    // har bar same root render ho rhi to last wali hi rander hoga
+    root.render(<Parent/>)
+    </script>
+</body>
+</html>

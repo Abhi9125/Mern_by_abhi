@@ -1,8 +1,8 @@
-//-------------------- empty object----------------------------
+//1.-------------------- empty object----------------------------
 var obj = {};
 console.log(obj);
 
-// ------------------Declare an objects ------------------------------------
+//2.------------------Declare an objects ------------------------------------
 // An object can be created with figure brackets {…} with an optional list of properties.
 //  A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
 var person ={
@@ -15,15 +15,15 @@ var person ={
 
 console.log(person);
 
-// ------------------dot Notation --> use to get key and value in object---------------------------------
+//3.------------------dot Notation --> use to get key and value in object---------------------------------
 console.log(person.name);
 console.log(person.age);
 
-// -----------------Square bracket --> also use to get key and value --------------------------------
+//4.-----------------Square bracket --> also use to get key and value --------------------------------
 console.log(person["phone"]);
 console.log(person["school name"]);
 
-// ----------------nesting of objects---------------------------------------------
+//5.----------------nesting of objects---------------------------------------------
 var captainAmerica ={
     firstname : "Steve",
     Lastname : "Rogers",
@@ -49,7 +49,7 @@ console.log(captainAmerica.address.state);
 console.log(captainAmerica["address"]["city"]);
 
 
-//---------------------- Travesing in object --------------------------------
+//6.---------------------- Travesing in object --------------------------------
 // for in loop   -- > gives key 
 for(let key in captainAmerica){
     console.log(key);  // only key print  output == fristname,Lastname, friend,...
@@ -57,17 +57,17 @@ for(let key in captainAmerica){
 }
 
 
-// -------------------------deleting a key from an object --------------------------
+//7.-------------------------deleting a key from an object --------------------------
     delete captainAmerica.age;
     console.log(captainAmerica);
 
 
-// -----------------------------Adding a key in object -----------------------------------------
+//8.-----------------------------Adding a key in object -----------------------------------------
 captainAmerica.height = "180";
 console.log(captainAmerica);
 
 
-// ---------------------------------Difference b/w (.) DOT and [] square notation -----------------------------
+//9.---------------------------------Difference b/w (.) DOT and [] square notation -----------------------------
 var user = {
     name : "Sandeep",
     age : "30",
@@ -98,7 +98,7 @@ let items = {
 };
 console.log(items);
 
-// -----------------------------property vakue shorthand use for when key and value both are same -----------------
+//10.-----------------------------property vakue shorthand use for when key and value both are same -----------------
 var computerbrand = "apple";
 var processor = "M2 sillion";
 var ram = "16GB";
@@ -121,7 +121,7 @@ console.log(specification.computerbrand);
 
 
 
-//-------------- Property names limitations---------------
+//11.-------------- Property names limitations---------------
 
 // As we already know, a variable cannot have a name equal to one of the language-reserved words like “for”, “let”, “return” etc.
 // But for an object property, there’s no such restriction:
@@ -146,7 +146,7 @@ console.log( obj["0"] ); // test
 console.log( obj[0] ); // test (same property)
 
 
-//-=--------------------------- Property existence test, “in” operator-------------
+//12.-=--------------------------- Property existence test, “in” operator-------------
 // A notable feature of objects in JavaScript, compared to many other languages, is that it’s possible to access any property. 
 // There will be no error if the property doesn’t exist!
 // Reading a non-existing property just returns undefined. So we can easily test whether the property exists:
@@ -195,7 +195,7 @@ else {
 
 
 
-// -------------------Ordered like an object----------------
+//13.-------------------Ordered like an object----------------
 // The short answer is: “ordered in a special fashion”: integer properties are sorted, others appear in creation order. The details follow.
 var codes = {
     "49": "Germany",
@@ -225,20 +225,46 @@ for(let key in person){
 
 
 
-// Summary
+//14.---------------------------------Summary-----------------------------
 
 // Objects are associative arrays with several special features.
-
 // They store properties (key-value pairs), where:
-
 // Property keys must be strings or symbols (usually strings).
 // Values can be of any type.
 // To access a property, we can use:
-
 // The dot notation: obj.property.
 // Square brackets notation obj["property"]. Square brackets allow taking the key from a variable, like obj[varWithKey].
 // Additional operators:
-
 // To delete a property: delete obj.prop.
 // To check if a property with the given key exists: "key" in obj.
 // To iterate over an object: for (let key in obj) loop.
+
+
+// ------------------------24/06/2022---------------------------------------
+
+//15.--------------------Object references and copying/or read artical-------------------------
+
+// One of the fundamental differences of objects versus primitives is that objects are stored and copied “by reference”, 
+// whereas primitive values: strings, numbers, booleans, etc – are always copied “as a whole value”.
+
+
+// Let’s start with a primitive, such as a string.
+// Here we put a copy of message into phrase:
+
+
+// let message = "Hello!";
+// let phrase = message;
+//As a result we have two independent variables, each one storing the string "Hello!"
+
+
+// Objects are not like that.
+// A variable assigned to an object stores not the object itself, but its “address in memory” – in other words “a reference” to it.
+// Let’s look at an example of such a variable:
+// let user = {
+//   name: "John"
+// };
+// And here’s how it’s actually stored in memory:
+//The object is stored somewhere in memory (at the right of the picture), while the user variable (at the left) has a “reference” to it.
+// We may think of an object variable, such as user, like a sheet of paper with the address of the object on it.
+// When we perform actions with the object, e.g. take a property user.name, the JavaScript engine looks at what’s at that address and 
+// performs the operation on the actual object.

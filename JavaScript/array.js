@@ -50,29 +50,7 @@ console.log(cars);
 let name = ["abhi","akhand","satyam","sandi"];
 console.log(name.at(-1))
 
-//  Arrow Function
 
-// 1. 
-var arr = (a,b) => {
-    let c = a + b;
-    console.log(c); 
-}
-
-arr(10,40);
-
-// 2.
-var arr = (a,b) => {
-    let c = a + b;
-    return c;
-}
-res = arr(10,40);
-console.log(res);
-
-// 3. If statement only in one line do not use {...}
- var arr = (squ) =>squ*squ;
-
- res = arr(20);
- console.log (res)
 
 
 

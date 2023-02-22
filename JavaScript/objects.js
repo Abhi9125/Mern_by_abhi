@@ -5,56 +5,56 @@
 // //2.------------------Declare an objects ------------------------------------
 // // An object can be created with figure brackets {…} with an optional list of properties.
 // //  A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
-// var person ={
-//     name : "Abhishek",
-//     age : 23,             // 23--> is integer but "23",'23',`23`--> is string
-//     phone : 9999999,      
-//     ismale : true,
-//     "School Name" : "St. Xavier school"
-// }
+var person ={
+    name : "Abhishek",
+    age : 23,             // 23--> is integer but "23",'23',`23`--> is string
+    phone : 9999999,      
+    ismale : true,
+    "School Name" : "St. Xavier school"
+}
 
-// console.log(person);
+console.log(person);
 
 // //3.------------------dot Notation --> use to get key and value in object---------------------------------
-// console.log(person.name);
-// console.log(person.age);
+console.log(person.name);
+console.log(person.age);
 
 // //4.-----------------Square bracket --> also use to get key and value --------------------------------
-// console.log(person["phone"]);
-// console.log(person["school name"]);
+console.log(person["phone"]);
+console.log(person["School Name"]);
 
 // //5.----------------nesting of objects---------------------------------------------
-// var captainAmerica ={
-//     firstname : "Steve",
-//     Lastname : "Rogers",
-//     friends : ["Bucky","Tony Stark","Bruce Barner"],
-//     isAvenger : true,
-//     address:{
-//         state : "Manhatain",
-//         city : "New York",
-//         country : "USA"
-//     },
-//     sayhi : function(){
-//         console.log(`hello my name is ${captainAmerica.firstname}`);
-//     }
-// };
+var captainAmerica ={
+    firstname : "Steve",
+    Lastname : "Rogers",
+    friends : ["Bucky","Tony Stark","Bruce Barner"],
+    isAvenger : true,
+    address:{
+        state : "Manhatain",
+        city : "New York",
+        country : "USA"
+    },
+    sayhi : function(){
+        console.log(`hello my name is ${captainAmerica.firstname}`);
+    }
+};
 
-// console.log(captainAmerica);
-// console.log(captainAmerica.friends);
-// console.log(captainAmerica.friends[1]);
-// console.log(captainAmerica["friends"][0]);
+console.log(captainAmerica);
+console.log(captainAmerica.friends);
+console.log(captainAmerica.friends[1]);
+console.log(captainAmerica["friends"][0]);
 
 // // ------------------------nested object accesing ---------------------------
 // console.log(captainAmerica.address.state);
 // console.log(captainAmerica["address"]["city"]);
 
 
-// //6.---------------------- Travesing in object --------------------------------
-// // for in loop   -- > gives key 
-// for(let key in captainAmerica){
-//     console.log(key);  // only key print  output == fristname,Lastname, friend,...
-//     console.log(captainAmerica[key]);  // print value of the key
-// }
+//6.---------------------- Travesing in object --------------------------------
+// for in loop   -- > gives key 
+for(let key in captainAmerica){
+    console.log(key);  // only key print  output == fristname,Lastname, friend,...
+    console.log(captainAmerica[key]);  // print value of the key
+}
 
 
 // //7.-------------------------deleting a key from an object --------------------------
@@ -68,15 +68,16 @@
 
 
 // //9.---------------------------------Difference b/w (.) DOT and [] square notation -----------------------------
-// var user = {
-//     name : "Sandeep",
-//     age : 30,
-// };
-// let abc = "age";
-// console.log(user.name);
-// console.log(user.abc); // output --> undefined
-// console.log(user["age"]);
-// console.log(user[abc]);
+var user = {
+    name : "Sandeep",
+    age : 30,
+};
+let abc = "age";
+console.log(user.name);
+console.log(user.abc); // output --> undefined
+console.log(user["age"]);
+console.log(user[abc]);
+console.log(user["abc"]);// output --> undefined
 
 
 // let fruit = prompt("Which fruit to buy?"); // value substitute
@@ -269,31 +270,31 @@
 
 
 // ---------------------------object cloning-------------------------------
-var obj = {
-    name : "abhi",
-    age : 30,
-}
+// var obj = {
+//     name : "abhi",
+//     age : 30,
+// }
 
-var clone={};
-// jiske andar copy karna h, jaha se copy karna hai
-Object.assign(clone,obj,{ismale: true},{favoritefood : "pizza"});
-console.log(clone);
-obj.name = "pete";
-console.log(obj.name);  //pate
-console.log(clone.name); //abhi  
+// var clone={};
+// // jiske andar copy karna h, jaha se copy karna hai
+// Object.assign(clone,obj,{ismale: true},{favoritefood : "pizza"});
+// console.log(clone);
+// obj.name = "pete";
+// console.log(obj.name);  //pate
+// console.log(clone.name); //abhi  
 
 
-// ----------------------------nested object cloning----------------------
-let user = {
-    name : "pate",
-    size:{
-        height:182,
-        width:50
-    },
-};
+// // ----------------------------nested object cloning----------------------
+// let user = {
+//     name : "pate",
+//     size:{
+//         height:182,
+//         width:50
+//     },
+// };
 
-var clone = {};
-Object.assign(clone,user);
-user.size.height =100;
-console.log(clone);  //height ko 182 hi hona chahiye tha but 100 ho gya m
-console.log(user);
+// var clone = {};
+// Object.assign(clone,user);
+// user.size.height =100;
+// console.log(clone);  //height ko 182 hi hona chahiye tha but 100 ho gya m
+// console.log(user);

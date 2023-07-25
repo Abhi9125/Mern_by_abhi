@@ -121,7 +121,7 @@ body{
  .ticket-lock{
     display: flex;
     justify-content: flex-end;
-    margin-top: 90px;
+    margin-top: -30px;
     margin-right: 11px;
     font-size: 1.5rem;
  }
@@ -137,6 +137,7 @@ body{
     padding: 2rem;
  }
 
+ /* active is use to give round on priority color */
  .active{
-    border: 5px solid red;
+    border: 2.5px solid red;
  }

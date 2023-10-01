@@ -21,7 +21,7 @@ console.log(person.age);
 
 // //4.-----------------Square bracket --> also use to get key and value --------------------------------
 console.log(person["phone"]);
-console.log(person["School Name"]);
+console.log(person["School Name"]); // jb bhi space ho to [] ka use krte hai object ke key ko acess krne ke liye.
 
 // //5.----------------nesting of objects---------------------------------------------
 var captainAmerica ={

@@ -1,143 +1,143 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: burlywood;
 }
-.toolbox-cont{
-    display: flex;
-    height: 5rem;
-    align-items: center;
-    background-color: #4b4b4b;;
-    /* justify-content: space-around; */
-}
-
-.toolbox-cont>*{
-    margin-left: 4rem;
+.toolbox-cont {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  background-color: #4b4b4b;
+  /* justify-content: space-around; */
 }
 
-.toolbox-color-cont{
-    height: 70%;
-    width:18rem;
-    background-color: #3d3d3d;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.toolbox-cont > * {
+  margin-left: 4rem;
 }
 
-.toolbox-color-cont>div{
-    width:3rem;
-    height: 1.5rem;
-}
-.lightpink{
-    background-color: lightpink;
-}
-.lightgreen{
-    background-color: lightgreen;
-}
-.lightblue{
-    background-color: lightblue;
-}
-.black{
-    background-color: black;
+.toolbox-color-cont {
+  height: 70%;
+  width: 18rem;
+  background-color: #3d3d3d;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.action-btn-cont{
-    height: 70%;
-    width:9rem;
-    background-color: #3d3d3d;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.toolbox-color-cont > div {
+  width: 3rem;
+  height: 1.5rem;
+}
+.lightpink {
+  background-color: lightpink;
+}
+.lightgreen {
+  background-color: lightgreen;
+}
+.lightblue {
+  background-color: lightblue;
+}
+.black {
+  background-color: black;
+  color: white;
 }
 
-.action-btn-cont i{
-    font-size: 2rem;
-    color: white;
+.action-btn-cont {
+  height: 70%;
+  width: 9rem;
+  background-color: #3d3d3d;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.modal-cont{
-    height: 50vh;
-    background-color: lightblue;
-    width: 45vw;
-    display: none;
-    position: absolute;   
-    /* Position ka use hm position dene ke liye krte hai
+.action-btn-cont i {
+  font-size: 2rem;
+  color: white;
+}
+
+.modal-cont {
+  height: 50vh;
+  background-color: lightblue;
+  width: 45vw;
+  display: none;
+  position: absolute;
+  /* Position ka use hm position dene ke liye krte hai
     cals() function ka use equal distance pr kisi chiz ko rkhane ke liye kiya jata hai.*/
-    top: calc((100vh - 50vh)/2);
-    left: calc((100vw - 45vw)/2);
+  top: calc((100vh - 50vh) / 2);
+  left: calc((100vw - 45vw) / 2);
 }
 
-.textarea-cont{
-    width: 75%;
-    height:100%;
-    background-color: #dfe4ea;
-    border: none;
-    resize: none;
-    font-size: 2.5rem;
-    outline: none;
+.textarea-cont {
+  width: 75%;
+  height: 100%;
+  background-color: #dfe4ea;
+  border: none;
+  resize: none;
+  font-size: 2.5rem;
+  outline: none;
 }
 
-.priority-color-cont{
-    width: 25%;
-    height: 100%;
-    background-color: #4b4b4b;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
+.priority-color-cont {
+  width: 25%;
+  height: 100%;
+  background-color: #4b4b4b;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
- .priority-color-cont>div{
+.priority-color-cont > div {
+  height: 10%;
+  width: 40%;
+}
 
-    height: 10%;
-    width: 40%;
+.ticket-cont {
+  height: 12rem;
+  width: 15rem;
+  background-color: #f1f2f6;
+}
 
- }
+.ticket-color {
+  height: 1rem;
+}
 
- .ticket-cont{
-    height:12rem;
-    width:15rem;
-    background-color:#f1f2f6;
- }
+.ticket-id {
+  height: 2rem;
+  background-color: red;
+}
 
- .ticket-color{
-    height:1rem;
- }
+.task-area {
+  /* clac()  -- > use to claculate the */
+  height: calc(100% - 1rem - 2rem);
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
 
- .ticket-id{
-    height: 2rem;
-    background-color: red;
- }
+.ticket-lock {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -30px;
+  margin-right: 11px;
+  font-size: 1.5rem;
+}
 
- .task-area{
-    /* clac()  -- > use to claculate the */
-    height: calc(100% - 1rem - 2rem );
-    font-size :1.5rem;
-    overflow-wrap: break-word;
- }
-
- .ticket-lock{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -30px;
-    margin-right: 11px;
-    font-size: 1.5rem;
- }
-
- .main-cont{
-    display: flex;
-    justify-content: center; 
-    /* Without wrap sabhi main-Contener eek hi line me aa rhe hai so hm wrap ka use karege 
+.main-cont {
+  display: flex;
+  justify-content: center;
+  /* Without wrap sabhi main-Contener eek hi line me aa rhe hai so hm wrap ka use karege 
     to move next line*/
-    flex-wrap: wrap;
-    /* Gap use to give gap 4 side of element */
-    gap: 2rem;
-    padding: 2rem;
- }
+  flex-wrap: wrap;
+  /* Gap use to give gap 4 side of element */
+  gap: 2rem;
+  padding: 2rem;
+}
 
- /* active is use to give round on priority color */
- .active{
-    border: 2.5px solid red;
- }
+/* active is use to give round on priority color */
+.active {
+  border: 2.5px solid red;
+}

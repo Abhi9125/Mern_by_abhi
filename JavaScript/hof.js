@@ -2,7 +2,7 @@
 
 var arr = [2, 5, 7, 12];
 
-// //ques1 calculate the area of a squares where side is arr 
+// //Ques1 -- > calculate the area of a squares where side is arr 
 // //expected o/p ->[4,25,49,144] 
 // function areaOfSquare(arr) {
 //     let res = [];
@@ -15,7 +15,7 @@ var arr = [2, 5, 7, 12];
 // var ans = areaOfSquare(arr);
 // console.log(ans);
 
-// //ques2 calculate the perimter of a squares where side is arr
+// //Ques2 --> calculate the perimter of a squares where side is arr
 // //expected o/p ->[8,20,28,48] 
 
 // function perimeterOfSquare(arr) {
@@ -29,7 +29,7 @@ var arr = [2, 5, 7, 12];
 // var ans = perimeterOfSquare(arr);
 // console.log(ans);
 
-// //ques3 calculate the diagonal of a squares where side is arr
+// //Ques3 --> calculate the diagonal of a squares where side is arr
 // //expected o/p ->[2.88, 7.199999999999999, 10.08, 17.28] 
 
 // function diagonalOfSquare(arr) {
@@ -43,7 +43,7 @@ var arr = [2, 5, 7, 12];
 // var ans = diagonalOfSquare(arr);
 // console.log(ans);
 
-//functional programming 
+//functional programming --------
 
 //better way
 // var arr = [2, 5, 7, 12]; 
@@ -112,7 +112,7 @@ Array.prototype.calculate = function(logic) { //calculate eek polyfill method ha
 }
 let area = function (side) {
     return side * side;
-  }
+}
 let narr = [2,5,7,12];  // this is pointing --> narr.
 var ans = narr.calculate(area);  // ab hm hof.js ke kisi bhi array .calculate karke calulate ki functionality perform kra skte hai. 
 console.log(ans);

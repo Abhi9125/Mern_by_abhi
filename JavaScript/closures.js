@@ -9,22 +9,22 @@
 
 // outer();
 
-//---------------In js we can also return a function------------------
+//-------------In js we can also return a function------------------
 // Q1
 // function outer(){
 //   var a = 7;
   
-//   //   function inner() {
-//  //     console.log(a);
-//  //   }
+//     function inner() {
+//      console.log(a);
+//    }
 
-//  //   return inner;  // function return along with its laxical scope 
+//    return inner;  // function return along with its laxical scope 
  
 //  //   we can also write it as below but use only 1
 
-//  return function inner() {
-//     console.log(a);
-//  }
+// //  return function inner() {
+// //     console.log(a);
+// //  }
 // }
 // var x = outer();
 // console.log(x) // print the entire function defination 

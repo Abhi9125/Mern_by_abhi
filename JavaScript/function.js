@@ -20,78 +20,80 @@
 // -> functions can be passed as parameters/args
 
 // build a calculator
-// function calculator(operator, num1, num2) {
-//     if (operator == "add") {
-//         return function add() {
-//             // console.log(num1+num2);
-//             return num1 + num2;
-//         }
-//     }
-//     else if (operator == "-") {
-//         return function sub() {
-//             console.log(num1-num2);
-//         }
-//     }
-// }
+function calculator(operator, num1, num2) {
+    if (operator == "add") {
+        return function add() {
+            // console.log(num1+num2);
+            return num1 + num2;
+        }
+    }
+    else if (operator == "-") {
+        return function sub() {
+            console.log(num1-num2);
+        }
+    }
+}
 
-// // let retFn = calculator("add", 3, 4);
-// let retFn = calculator("add", 45, 46);
-// console.log(retFn);
-// let sumOfTwoNum = retFn();
-// console.log(sumOfTwoNum);
+// let retFn = calculator("add", 3, 4);
+let retFn = calculator("add", 45, 46);
+console.log(retFn);
+let sumOfTwoNum = retFn();
+console.log(sumOfTwoNum);
 
 
-// // 2) -------------function expression---------------------------------
+// 2) -------------function expression---------------------------------
+//  ----Syntex---------
 // var variable_name = function (params) {
 //     //do something
 // }
 // variable_name();
-// var sayHi = function () {
-//     console.log("hello how r u ?");
-// }
-// sayHi();
-// console.log(sayHi);
+var sayHi = function () {
+    console.log("hello how r u ?");
+}
+sayHi();
+console.log(sayHi);
 
 
 
 // // 3)--------------- IIFE -> immediately invoked function-----------------
-// function add(a, b) { // normal function 
-//     return a + b;
-// }
-// var ans = add(2, 3);
-// console.log(ans); 
+// IIFE function inclose with the ()
+function add(a, b) { // normal function 
+    return a + b;
+}
+var ans = add(2, 3);
+console.log(ans); 
 // // IIFE function 
-// let additionIIFE = (function (a, b) {
-//     // console.log(a + b);
-//     return a + b;
-// })(20, 30);
-// console.log(additionIIFE);
+let additionIIFE = (function (a, b) {
+    // console.log(a + b);
+    return a + b;
+})(20, 30);
+console.log(additionIIFE);
 
 
 
 // 4)--------Arrow Function----------------------------
 
 // a. 
-var arr = (a,b) => {
-    let c = a + b;
-    console.log(c); 
-}
+// var arr = (a,b) => {
+//     let c = a + b;
+//     console.log(c); 
+// }
 
-arr(10,40);
+// arr(10,40);
 
-// b.
-var arr = (a,b) => {
-    let c = a + b;
-    return c;
-}
-res = arr(10,40);
-console.log(res);
+// // b.
+// var arr = (a,b) => {
+//     let c = a + b;
+//     return c;
+// }
+// res = arr(10,40);
+// console.log(res);
 
-// c. If statement only in one line do not use {...}
- var arr = (squ) =>squ*squ;
+// // c. If statement only in one line do not use {...}
+//  var arr = (squ) =>squ*squ;
 
- res = arr(20);
- console.log (res)
+//  res = arr(20);
+//  console.log (res);
 
 
 //5)------Question on js info ---------------------------------
@@ -103,3 +105,5 @@ console.log(res);
 // }
 // var ans = agecheker(15);
 // console.log(ans);
+let res = prompt("visitor",[0]);
+

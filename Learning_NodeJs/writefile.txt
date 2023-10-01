@@ -1,0 +1,1 @@
+By default writeFileSync or writeFile overwrite the content of existing fileBy default writeFileSync or writeFile overwrite the content of existing file to awoid this we use a third argument as an object 

@@ -17,7 +17,7 @@
 - child node traveral -- childNodes/firstChild/lastChild/children/fristElemnetChild/lastElementChild
 - Sibling node Travesal -- previousElementSibling/nextElementSibling/previousSibling/nextSibling
 - Dom EventListner
-- Event Propagation
+- Event Propagation Read More -- https://medium.com/@nusrat35/a-deep-dive-into-the-event-propagation-advanced-concept-of-javascript-63a906e389a#id_token
 - Event Delegation
 
 > HTML CODE
@@ -52,6 +52,21 @@
 ```
 
 ```CSS
+*{
+    margin: 0%;
+    padding : 0%;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1479&q=80);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;

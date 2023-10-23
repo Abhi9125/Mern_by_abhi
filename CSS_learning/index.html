@@ -30,5 +30,68 @@
       <a href="www.google.com">Google</a>
       <button id="btn">submit</button>
     </div>
+
+    <form action="backend.php">
+      <label for="fname">Frist Name :</label>
+      <input
+        type="text"
+        name="fname"
+        id="fanme"
+        placeholder="Enter your frist name"
+        required
+      />
+      <br />
+
+      <label for="lname">Last Name :</label>
+      <input
+        type="text"
+        name="lname"
+        id="lname"
+        placeholder="Enter your last name"
+        required
+      />
+      <br />
+      <label for="email">e -mail:</label>
+      <input type="email" name="email" placeholder="Enter your emai" required />
+
+      <br />
+
+      <label for="pass">Enter Password: </label>
+      <input
+        type="password"
+        name="pass"
+        minlength="6"
+        maxlength="12"
+        required
+      />
+
+      <br />
+
+      <div>
+        <label for="Gender">Gender</label>
+        <label for="Mr.">Mr.</label>
+        <input type="radio" name="Mygender" id="Mr." />
+
+        <label for="Miss.">Miss.</label>
+        <input type="radio" name="Mygender" id="Miss." />
+
+        <label>Trans</label>
+        <input type="radio" name="Mygender" id="Trans" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="select">Select Country</label>
+        <select name="selectnName" id="select">
+          <option value="Ind">India</option>
+          <option value="Pak">Pakistan</option>
+          <option value="Npl">Nepal</option>
+          <option value="Sl">Sri Lanka</option>
+        </select>
+      </div>
+
+      <input type="submit" value="login!" />
+    </form>
   </body>
 </html>

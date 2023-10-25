@@ -253,3 +253,48 @@ there could be multiple `.catch` too below ex-
 // function validateCard(carts5) {
 //   return false; // assume
 // }
+
+const carts = ["shoes", "pants", "kurta"];
+createOrder(carts)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId; //return a promise
+  })
+  .catch(function (err) {
+    console.log(err);
+  })
+  .then(function (orderId) {
+    console.log("ProceedToPayment running");
+    return proceedToPayment(orderId);
+  })
+  .catch(function () {
+    console.log("Error Got");
+  });
+// production part of promise/ creating the promise
+function createOrder(carts) {
+  const promise1 = new Promise(function (resolve, reject) {
+    if (!validateCard(carts)) {
+      // if card is not valid
+      const err = new Error("cart is not valid");
+      reject(err);
+    } else {
+      const orderId = "12345";
+      setTimeout(function () {
+        resolve(orderId);
+      }, 10000);
+    }
+  });
+  return promise1; // if the promise return true so above promise will resolve
+}
+
+function validateCard(carts5) {
+  return false; // assume
+}
+
+// Assume that proceedTOPayemnt return a resolve promise
+function proceedToPayment(ID) {
+  return new Promise(function (resolve, reject) {
+    // resolve("Payment Suceesfull");
+    reject("Error");
+  }); // asume return a promise
+}

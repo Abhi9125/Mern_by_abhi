@@ -6,10 +6,25 @@
 - Inversion of Control
 - How to resolve Inversion Control
 - Use of Promise
+- Erro handling in promise
 - How promise resolve callback hell problem
 - How with the help of promise we resolve callback hell problem
 - how to create our own promise
 - What is promises chaining
+- Advanced Error Handling
+
+> 1. Before promise we used to depend on callback functions which would result in 1.) Callback Hell (Pyramid of doom)
+> 2. Inversion of control is overcome by using promise.
+>    2.1) A promise is an object that represents eventual completion/failure of an asynchronous operation.
+
+    2.2) A promise has 3 states: pending | fulfilled | rejected.
+    2.3) As soon as promise is fulfilled/rejected => It updates the empty object which is assigned undefined in pending state.
+    2.4) A promise resolves only once and it is immutable.
+    2.5) Using .then() we can control when we call the cb(callback) function.
+
+3. To avoid callback hell (Pyramid of doom) => We use promise chaining. This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+
+4. A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
 
 ```Javascript
 // -------------------------------------------
@@ -205,9 +220,206 @@ function validateCard(carts5) {
   return true; // assume
 }
 
+// Assume that proceedTOPayemnt return a resolve promise
+function proceedToPayment(ID) {
+  return new Promise(function (resolve, reject) {
+    resolve("Payment Suceesfull");
+  }); // asume return a promise
+}
+
 // output
-// script.js:262 12345
-// script.js:266 ProceedToPayment running
-// script.js:273 ReferenceError: proceedToPayment is not defined
-//     at script.js:267:5
+// 12345
+// ProceedToPayment running
+// Payment Suceesfull
 ```
+
+## Advanced Error Handling
+
+> `.catch()` wo agr sable last me hai ar single `.catch()` to pure promise chining me koi bhi reject hoga to pura promise chaing uske bt reject ho jayega
+
+- `.catch()` ko hm ko pertical promise check kne ke liye lga skte hai is condition me `.catch()` us promise se leke usse upar wale promise me error dekhega.
+- agr `.catch()` promise chaining ke bich me lagate hai ar ast me koi `.catch()` to `.catch()` ke niche wale promise defenetly chlega.
+- In simple word, `.catch()` eek level ki tarah km kr rha jis level pe hoga usse leke usse top wale me reject dekehega.
+  >
+
+```javaacript
+createOrder(carts)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId; //return a promise
+  })
+  .then(function (orderId) {
+    console.log("ProceedToPayment running");
+    return proceedToPayment(orderId);
+  })
+  .catc(function(){
+    console.log("Error Got");
+  })
+  .then(function (paymentInfo) {
+    console.log("this is defenetly exicute");
+  })
+
+```
+
+```JS
+const carts = ["shoes", "pants", "kurta"];
+
+// Below code of Promise chaining
+createOrder(carts)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId; //return a promise
+  })
+  .then(function (orderId) {
+    console.log("ProceedToPayment running");
+    return proceedToPayment(orderId);
+  })
+  .then(function (paymentInfo) {
+    console.log(paymentInfo);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+
+// production part of promise/ creating the promise
+function createOrder(carts) {
+  const promise1 = new Promise(function (resolve, reject) {
+    if (!validateCard(carts)) {
+      // if card is not valid
+      const err = new Error("cart is not valid");
+      reject(err);
+    } else {
+      const orderId = "12345";
+      setTimeout(function () {
+        resolve(orderId);
+      }, 10000);
+    }
+  });
+  return promise1; // if the promise return true so above promise will resolve
+}
+
+function validateCard(carts5) {
+  return true; // assume
+}
+
+// Assume that proceedTOPayemnt return a resolve promise
+function proceedToPayment(ID) {
+  return new Promise(function (resolve, reject) {
+    resolve("Payment Suceesfull");
+  }); // asume return a promise
+}
+```
+
+- Case 2: `.catch() use for perrticular promise`
+
+```JS
+const carts = ["shoes", "pants", "kurta"];
+
+// Below code of Promise chaining
+createOrder(carts)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId; //return a promise
+  })
+  .catch(function (err) {
+    console.log(err);
+  })
+  .then(function (orderId) {
+    console.log("ProceedToPayment running");
+    return proceedToPayment(orderId);
+  })
+  .then(function () {
+    console.log("This function defenatly run");
+  });
+// production part of promise/ creating the promise
+function createOrder(carts) {
+  const promise1 = new Promise(function (resolve, reject) {
+    if (!validateCard(carts)) {
+      // if card is not valid
+      const err = new Error("cart is not valid");
+      reject(err);
+    } else {
+      const orderId = "12345";
+      setTimeout(function () {
+        resolve(orderId);
+      }, 10000);
+    }
+  });
+  return promise1; // if the promise return true so above promise will resolve
+}
+
+function validateCard(carts5) {
+  return false; // assume
+}
+
+// Assume that proceedTOPayemnt return a resolve promise
+function proceedToPayment(ID) {
+  return new Promise(function (resolve, reject) {
+    resolve("Payment Suceesfull");
+  }); // asume return a promise
+}
+// output
+// Error: cart is not valid
+// new Promise (<anonymous>)
+// createOrder
+// ProceedToPayment running
+// Payment Suceesfull
+```
+
+- Case 3 : When `.catch()` a perticular promise and also in end `.catch()`
+
+```JS
+const carts = ["shoes", "pants", "kurta"];
+
+//promise
+createOrder(carts)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId; //return a promise
+  })
+  .catch(function (err) {
+    console.log(err);
+  })
+  .then(function (orderId) {
+    console.log("ProceedToPayment running");
+    return proceedToPayment(orderId);
+  })
+  .catch(function (){
+    console.log("Error Got");
+  })
+// production part of promise/ creating the promise
+function createOrder(carts) {
+  const promise1 = new Promise(function (resolve, reject) {
+    if (!validateCard(carts)) {
+      // if card is not valid
+      const err = new Error("cart is not valid");
+      reject(err);
+    } else {
+      const orderId = "12345";
+      setTimeout(function () {
+        resolve(orderId);
+      }, 10000);
+    }
+  });
+  return promise1; // if the promise return true so above promise will resolve
+}
+
+function validateCard(carts5) {
+  return false; // assume
+}
+
+// Assume that proceedTOPayemnt return a resolve promise
+function proceedToPayment(ID) {
+  return new Promise(function (resolve, reject) {
+    reject("Error");
+  }); // asume return a promise
+}
+// Output
+// Card is not valid
+// ProceedToPayment running
+// Error Got
+```
+
+---
+
+## Async/Await - Episode - 04
